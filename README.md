@@ -9,7 +9,7 @@ A repo containing a simple Nextflow pipeline. There are several ways to run this
 - `magrittr`
 
 2. From a cached repo or a cloned repo. To download the pipeline automatically from Github and run the cached version, use
-`nextflow run timothy-barry/nf_docker_demo`. Otherwise, git clone the repo, cd into the cloned directory, and run the pipeline via `nextflow run main.nf`.
+`nextflow run timothy-barry/nf_docker_demo -r main`. Otherwise, git clone the repo, cd into the cloned directory, and run the pipeline via `nextflow run main.nf`.
 
 For example, to download the repository automatically from Github and run it with docker:
-`nextflow run timothy-barry/nf_docker_demo -with-docker timbarry/nf_docker_demo:1.0`.
+`nextflow run timothy-barry/nf_docker_demo -r main -with-docker timbarry/nf_docker_demo:1.0`.
