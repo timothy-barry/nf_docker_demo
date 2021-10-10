@@ -10,12 +10,8 @@ process run_lm {
 
   output: file 'fitted_model.rds' into lm_ch
 
-  // """
-  // Rscript $projectDir/bin/run_lm.R $i
-  // """
-
   """
-  run_lm.R $i
+  Rscript $projectDir/bin/run_lm.R $i
   """
 }
 
@@ -27,11 +23,7 @@ process combine_results {
 
   output: file 'result.rds' into result_ch
 
-  // """
-  // Rscript $projectDir/bin/combine_results.R raw_result*
-  // """
-
   """
-  combine_results.R raw_result*
+  Rscript $projectDir/bin/combine_results.R raw_result*
   """
 }
