@@ -1,10 +1,11 @@
 #!/usr/bin/env nextflow
-
 params.n_pods = 15
 params.result_dir = "$launchDir"
 
-idx_ch = Channel.of( 1..params.n_pods )
+println "Launching from $launchDir"
+println "main.nf script located in $baseDir"
 
+idx_ch = Channel.of( 1..params.n_pods )
 process run_lm {
   input: val i from idx_ch
 
