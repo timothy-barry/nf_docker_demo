@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 library(magrittr)
 args <- commandArgs(trailingOnly = TRUE)
 

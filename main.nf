@@ -1,9 +1,7 @@
 #!/usr/bin/env nextflow
+
 params.n_pods = 15
 params.result_dir = "$launchDir"
-
-println "Launching from $launchDir"
-println "main.nf script located in $baseDir"
 
 idx_ch = Channel.of( 1..params.n_pods )
 process run_lm {
@@ -12,9 +10,10 @@ process run_lm {
   output: file 'fitted_model.rds' into lm_ch
 
   """
-  Rscript $projectDir/bin/run_lm.R $i
+  run_lm.R $i
   """
 }
+
 
 process combine_results {
   echo true
@@ -25,6 +24,6 @@ process combine_results {
   output: file 'result.rds' into result_ch
 
   """
-  Rscript $projectDir/bin/combine_results.R raw_result*
+  combine_results.R raw_result*
   """
 }

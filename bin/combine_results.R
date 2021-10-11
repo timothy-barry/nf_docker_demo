@@ -1,4 +1,5 @@
-# accept command line arguments
+#!/usr/bin/env Rscript
+
 args <- commandArgs(trailingOnly = TRUE)
 raw_data_fps <- args[seq(1, length(args))]
 
